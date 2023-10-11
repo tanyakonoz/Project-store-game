@@ -1,0 +1,42 @@
+.banner
+    &-img
+        background-color: $color-blue-dark
+        grid-column: full-start / col-end 4
+        display: grid
+        grid-template-columns: repeat(16, 1fr)
+        grid-template-rows: repeat(24, 1fr)
+        background: url(../img/background.png) center / cover no-repeat
+        @include respond(tab-port)      //перестр секцию img слева во всю ширину//
+            grid-column: 1 / -1
+
+        &__img-1
+            width: 100%
+            grid-column: 3 / 15
+            grid-row: 3 / 12
+            @include respond(tab-port)
+                grid-column: 2 / 10     //уменьшаю img  на 830px//
+        &__img-2
+            width: 100%
+            grid-column: 5 / -1
+            grid-row: 10 / 23
+            transform: translateX(3.5rem)     //подвигаю 2-е изобр. //
+            @include respond(tab-port)
+                grid-column: 8 / 15     //уменьшаю img  на 830px//
+
+    &-text
+        background-color: $color-blue-dark
+        grid-column: col-start 5 / full-end
+        padding: 4rem   //отступ в секции text //
+        //display: flex
+        //flex-direction: column
+        //justify-content: center
+        //align-items: flex-start или
+        display: grid
+        align-content: center
+        justify-items: start
+        @include respond(tab-port)      //перестр секцию text справа во всю ширину//
+            grid-column: 1 / -1
+            grid-row: 5 / 6     //секция text над img//
+        
+        &__text
+            margin-bottom: 4rem

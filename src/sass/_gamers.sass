@@ -1,0 +1,36 @@
+.gamers
+    background-color: $color-blue-dark
+    grid-column: col-start 7 / full-end
+    display: grid
+    grid-template-columns: max-content
+    grid-gap: 4rem 2rem
+    align-content: center       //центрирую сетку//
+    justify-content: center     //центрирую сетку//
+    @include respond(tab-port)
+        grid-column: 1 / -1     //розмещаю геймиров на 830px в ряд на др секции//
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr))
+        justify-items: center   //центрирую геймеров//
+        padding: 5rem 0
+    @include respond(phone)
+        grid-template-columns: min-content      //фио одного из геймеров больше//
+        justify-items: start    //виравнив геймеров по левому краю на 320px//
+    &__box
+        display: grid
+        grid-template-columns: max-content max-content
+        grid-column-gap: 2rem
+        @include respond(tab-port)
+           
+            
+
+    &__title
+        grid-column: 1 / -1
+        justify-self: center    //центрирую элементы внутри фио и score//
+
+    &__img
+        width: 7rem
+    &__text
+        align-self: center  //центрирую элементы внутри фио и score//
+    &__score
+        font-size: 1.6rem
+        color: $color-gray-dark
+        font-weight: 300
